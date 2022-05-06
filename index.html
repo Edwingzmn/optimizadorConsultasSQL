@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimizador de consultas SQL</title>
+    <!-- Referencia favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/src/favicon.png">
+    <!-- Referencia de bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <!-- Referencia css propio -->
+    <link href="/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+                <a href="/index.html" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+
+                    <span class="fs-4">Optimizador de consultas SQL</span>
+                </a>
+                <ul class="nav nav-pills">
+                    <li class="nav-item"><a href="/manual.html" class="nav-link">Manual</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                    <li class="nav-item"><a href="/contacto.html" class="nav-link">Contacto</a></li>
+                </ul>
+            </header>
+        </div>
+        <div class="container text-center">
+            <img src="/src/LOGO_optimizacion_1.png" alt="logo_optimizacion" class="img-fluid" width="200px" height="200px">
+        </div>
+        <div class="container mb-5 mt-5">
+            <h3>Importar BD:</h3>
+            <p>Importa tu base de datos de la cual vas a realizar la optimizazión de tu consulta (archivo .sql)</p>
+            <form action="" class="row g-3">
+                <div class="col-md-12">
+                    <input class="form-control" type="file" id="data">
+                </div>
+            </form>
+        </div>
+        <div class="container mb-5 mt-5">
+            <h3>Entrada:</h3>
+            <form action="" class="row g-3 needs-validation" novalidate>
+                <div class="col-md-10">
+                    <input type="text" class="form-control" id="query" placeholder="Ingrese la consulta SQL que quiere optimizar..." required>
+                    <div class="invalid-feedback">
+                        Este campo no debe estar vacío, ingresa una consulta válida!
+                    </div>
+                </div>
+                <div class="col">
+                    <input onclick="divemer();" type="button" class="btn btn-success mb-3 col-md-12" value="Validar consulta">
+                </div>
+                <div class="divemergente" id="divboton">
+                    <div class="alert alert-success" role="alert">
+                        La consulta ingresada es válida.
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-3 col-md-12">Optimizar consulta</button>
+                </div>
+            </form>
+        </div>
+        <div class="container mb-5">
+            <h4>¿En qué consiste esta herramienta?</h4>
+            <p style="text-align: justify;">Las bases de datos son de vital importancia para los sistemas de información hoy en día pues la cantidad de datos que se manejan en ellos a diario es enorme y se debe asegurar su estabilidad, coherencia y permanencia. Surge la necesidad de
+                que la manera en la que se guarda, procesa y se visualiza esta información sea cada vez más eficiente. Gracias a las bases de datos relacionales, los desarrolladores pueden visualizar la organización de los datos con tablas que representan
+                cómo están relacionados y así dar una respuesta más rápida ante consultas complejas en comparación con otros sistemas de bases de datos. Sin embargo, cuando se llega al área de lenguaje SQL (Structured Query Language), concretamente cuando
+                se requiere obtener algún dato en específico, se dificulta encontrar un plan de consulta eficiente que consiga la información que se quiere obtener de la manera óptima, puesto que se cuenta con un gran número de opciones que pueden generar
+                el mismo resultado.</p>
+        </div>
+        <div class="container mb-5">
+            <h4>Desarrolladores:</h4>
+            <p class="justificar-txt">El optimizador de consultas SQL a través del método heurístico fue desarrollado por Yhoselin Guadalupe Salazar Pérez y Edwin David Guzmán Nieto estudiantes de la <a href="https://www.escom.ipn.mx/">Escuela Superior de Cómputo</a> del <a href="https://www.ipn.mx/">Instituto Politécnico Nacional</a> como trabajo terminal,
+            para obtener el grado de ingenieros en sistemas computacionales y contribuir con la sociedad con una herramienta que les sirva para ampliar su conocimiento dentro del área de las bases de datos.</p>
+        </div>
+        <div class="container mb-5 list-groud rounded">
+            <h4>Recursos externos</h4>
+                <a href="#" class="list-group-item list-group-item-action">Bootstrap</a>
+                <a href="#" class="list-group-item list-group-item-action">Python</a>
+                <a href="#" class="list-group-item list-group-item-action">CSS3 family tree by Ilya Pestov</a>
+        </div>
+        <!-- Código del footer -->
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <div class="col-md-4 d-flex align-items-center">
+                    <a href="/" class="mb-3 me-2 mb-md-0 text-muted text-decoration-none lh-1">
+                        <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+                    </a>
+                    <span class="text-muted">&copy; 2022 ESCOM, IPN</span>
+                </div>
+
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+                    <li class="ms-3"><a class="text-muted" href="#"><i class="bi-github" role="img" aria-label="GitHub"></i></a></li>
+                    <li class="ms-3"><a class="text-muted" href="#"><i class="bi-git" role="img" aria-label="GitHub"></i></a></li>
+                    <li class="ms-3"><a class="text-muted" href="#"><i class="bi-envelope-plus-fill" role="img" aria-label="GitHub"></i></a></li>
+                </ul>
+            </footer>
+        </div>
+    </main>
+    <!-- Referencia a nuestros scripts de JS -->
+    <script src="/js/main.js"></script>
+</body>
+
+</html>
