@@ -5,3 +5,7 @@
 .justificar-txt{
     text-align: justify;
 }
+
+.fondo{
+    background-image: url("/src/img-optimizador.png");
+}
